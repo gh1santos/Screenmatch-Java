@@ -4,7 +4,7 @@ The system consumes data from an external API, converts the JSON responses into 
 
 This project was developed to practice backend development with Java and Spring Boot, focusing on API integration, data persistence, and application architecture.
 
-🚀 Features
+Features
 
 ✔ Search TV series using an external API
 ✔ Store series data in a PostgreSQL database
@@ -13,7 +13,7 @@ This project was developed to practice backend development with Java and Spring 
 ✔ Convert JSON responses into Java objects
 ✔ Structured backend architecture with Spring Boot
 
-🧰 Tech Stack
+Tech Stack
 Technology	Purpose
 Java	Main programming language
 Spring Boot	Backend framework
@@ -22,7 +22,7 @@ Hibernate	ORM
 PostgreSQL	Database
 Jackson	JSON serialization/deserialization
 Maven	Dependency management
-🧠 Concepts Practiced
+Concepts Practiced
 
 This project applies several important backend concepts:
 
@@ -34,7 +34,7 @@ Repository pattern
 Service layer architecture
 Object mapping
 Clean backend structure
-🏗 Architecture Overview
+Architecture Overview
 
 The project follows a layered architecture commonly used in backend applications.
 
@@ -55,7 +55,7 @@ src
  │    └── Principal.java
  │
  └── ScreenmatchWebApplication.java
-🌐 External API
+External API
 
 The application consumes data from a movie/series API that returns information such as:
 
@@ -68,13 +68,6 @@ Episode information
 
 The responses are converted to Java objects using Jackson.
 
-⚙️ Running the Project
-1️⃣ Clone the repository
-git clone https://github.com/your-username/screenmatch-web.git
-2️⃣ Navigate to the project folder
-cd screenmatch-web
-3️⃣ Configure the database
-
 Create a PostgreSQL database:
 
 screenmatch
@@ -84,7 +77,7 @@ Example configuration:
 spring.datasource.url=jdbc:postgresql://localhost:5432/screenmatch
 spring.datasource.username=your_user
 spring.datasource.password=your_password
-4️⃣ Run the application
+Run the application
 
 Run the Spring Boot application:
 
@@ -95,7 +88,7 @@ Spring Boot will automatically:
 start the application
 connect to the database
 create tables if necessary
-📊 Example Data
+Example Data
 
 Example series stored in the database:
 
@@ -103,7 +96,7 @@ Series: Breaking Bad
 Seasons: 5
 Rating: 9.5
 Episodes: Multiple episodes per season
-🎯 Learning Goals
+Learning Goals
 
 This project was created to strengthen skills in:
 
