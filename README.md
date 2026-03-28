@@ -1,110 +1,82 @@
-A Spring Boot web application that searches, stores, and manages information about TV series and episodes using an external movie API.
+# 🎬 Screenmatch: TV Series Manager
 
-The system consumes data from an external API, converts the JSON responses into Java objects, and persists the information into a PostgreSQL database using Spring Data JPA.
+![Java](https://img.shields.io/badge/Java-17%2B-orange?style=for-the-badge&logo=openjdk)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen?style=for-the-badge&logo=springboot)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 
-This project was developed to practice backend development with Java and Spring Boot, focusing on API integration, data persistence, and application architecture.
+Aplicação robusta desenvolvida em **Spring Boot** para busca, armazenamento e gerenciamento de séries e episódios, consumindo dados de APIs externas de entretenimento.
 
-Features
+---
 
-✔ Search TV series using an external API
-✔ Store series data in a PostgreSQL database
-✔ Retrieve stored series information
-✔ Manage seasons and episodes data
-✔ Convert JSON responses into Java objects
-✔ Structured backend architecture with Spring Boot
+## Funcionalidades
 
-Tech Stack
-Technology	Purpose
-Java	Main programming language
-Spring Boot	Backend framework
-Spring Data JPA	Database interaction
-Hibernate	ORM
-PostgreSQL	Database
-Jackson	JSON serialization/deserialization
-Maven	Dependency management
-Concepts Practiced
+* **Busca Dinâmica:** Integração com API externa para localizar séries em tempo real.
+* **Persistência de Dados:** Armazenamento completo de séries, temporadas e episódios em banco relacional.
+* **Conversão Inteligente:** Desserialização de JSON complexos para objetos Java via Jackson.
+* **Gestão de Acervo:** Listagem e filtragem de informações armazenadas.
+* **Arquitetura em Camadas:** Organização seguindo as melhores práticas de desenvolvimento backend.
 
-This project applies several important backend concepts:
+---
 
-REST API consumption
-JSON deserialization
-Entity modeling
-Database persistence with JPA
-Repository pattern
-Service layer architecture
-Object mapping
-Clean backend structure
-Architecture Overview
+## 🛠️ Tech Stack
 
-The project follows a layered architecture commonly used in backend applications.
+| Tecnologia | Função |
+| :--- | :--- |
+| **Java** | Linguagem principal do ecossistema |
+| **Spring Boot** | Framework para agilidade no desenvolvimento |
+| **Spring Data JPA** | Abstração da camada de dados |
+| **Hibernate** | Framework ORM para mapeamento objeto-relacional |
+| **PostgreSQL** | Banco de dados robusto para produção |
+| **Jackson** | Biblioteca para manipulação de dados JSON |
+| **Maven** | Gerenciador de dependências e automação |
 
-src
- ├── model
- │    ├── Serie.java
- │    ├── Episodio.java
- │    └── DadosSerie.java
- │
- ├── repository
- │    └── SerieRepository.java
- │
- ├── service
- │    ├── ConsumoApi.java
- │    └── ConverteDados.java
- │
- ├── principal
- │    └── Principal.java
- │
- └── ScreenmatchWebApplication.java
-External API
+---
 
-The application consumes data from a movie/series API that returns information such as:
+## 🏗️ Arquitetura do Projeto
 
-Title
-Total seasons
-Rating
-Poster
-Plot
-Episode information
+O projeto segue o padrão de camadas para garantir manutenibilidade e escalabilidade:
 
-The responses are converted to Java objects using Jackson.
+```text
+src/main/java/com/ghdev/screenmatch
+├─ model       # Entidades JPA, Records e DTOs
+├─ repository  # Interfaces Spring Data JPA para PostgreSQL
+├─ service     # Consumo de API (HttpClient) e Conversão (Jackson)
+├─ principal   # Lógica de interação e execução
+└─ application # Classe de inicialização Spring Boot
+⚙️ Configuração e Instalação
+1. Banco de Dados
+Certifique-se de ter o PostgreSQL instalado e crie um banco chamado screenmatch.
 
-Create a PostgreSQL database:
+2. application.properties
+Configure as credenciais de acesso ao seu banco local:
 
-screenmatch
-
-Example configuration:
-
+Properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/screenmatch
-spring.datasource.username=your_user
-spring.datasource.password=your_password
-Run the application
+spring.datasource.username=seu_usuario
+spring.datasource.password=sua_senha
 
-Run the Spring Boot application:
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+3. Execução
+Execute a aplicação através da sua IDE ou via terminal utilizando o Maven:
 
-ScreenmatchWebApplication.java
+Bash
+./mvnw spring-boot:run
+🧠 Conceitos Praticados
+Este projeto foi fundamental para consolidar conhecimentos em:
 
-Spring Boot will automatically:
+Consumo de APIs REST: Utilização de HttpClient e manipulação de Requests/Responses.
 
-start the application
-connect to the database
-create tables if necessary
-Example Data
+Mapeamento Objeto-Relacional (ORM): Relacionamentos @OneToMany entre Séries e Episódios.
 
-Example series stored in the database:
+Streams API: Filtragem e ordenação de dados de forma funcional.
 
-Series: Breaking Bad
-Seasons: 5
-Rating: 9.5
-Episodes: Multiple episodes per season
-Learning Goals
+Repository Pattern: Abstração total de queries SQL complexas.
 
-This project was created to strengthen skills in:
+📚 Origem
+Este projeto faz parte da minha jornada de especialização em Backend Java. Desenvolvido inicialmente em curso e aprimorado com documentação e refatoração pessoal para portfólio.
 
-Java backend development
-Spring Boot framework
-API integration
-database persistence
-software architecture
-📚 Project Origin
+📫 Desenvolvido por GHDev
 
-This project was initially developed as part of a Java backend course, with additional documentation and improvements added by me.
+
+http://googleusercontent.com/interactive_content_block/0
